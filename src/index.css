@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+@theme {
+  --font-rhat: "Red Hat Text", sans-serif;
+  --default-font-family: var(--font-rhat);
+}

@@ -6,6 +6,7 @@
 }
 
 body {
+  position: relative;
   background-color: #fff1f2;
   width: 100vw;
   min-height: 100dvh;

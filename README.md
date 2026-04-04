@@ -46,8 +46,8 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Add solution URL here](https://github.com/Star-Mdakane/product-list-with-cart-react-and-tailwindcss.git)
+- Live Site URL: [Add live site URL here](https://product-list-with-cart-react-and-ta.vercel.app/)
 
 ## My process
 
@@ -113,9 +113,9 @@ Describe how you used AI tools (if any) during this project. This helps demonstr
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Website - [Add your name here](https://product-list-with-cart-react-and-ta.vercel.app/)
+- Frontend Mentor - [@Star-Mdakane](https://www.frontendmentor.io/profile/Star-Mdakane)
+- Twitter - [@KidStarMadrad](https://www.twitter.com/KidStarMadrad)
 
 **Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
 

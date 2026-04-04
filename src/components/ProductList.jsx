@@ -1,4 +1,6 @@
 import React from 'react'
+import AddItemButton from './AddItemButton'
+import ActiveButton from './ActiveButton'
 
 const ProductList = () => {
     return (
@@ -8,21 +10,8 @@ const ProductList = () => {
                 <li className='w-full flex flex-col gap-4'>
                     <div className='relative mb-5.5'>
                         <img src="../../assets/images/image-waffle-mobile.jpg" className='h-53 lg:h-60 rounded-lg' alt="waffle" />
-                        <button type="button" className='w-40 h-11 p-3 gap-2 bg-white border border-rose-400 rounded-full absolute left-1/2 translate-x-[-50%] bottom-0 translate-y-1/2 flex items-center justify-center'>
-                            <img src="../../assets/images/icon-add-to-cart.svg" alt="cart" />
-                            <p className='text-[14px] text-[#260F08] font-semibold leading-[auto] tracking-[0%]'>
-                                Add To Cart
-                            </p>
-                        </button>
-                        {/* <button id='active' type="button" className='w-40 h-11 p-3 rounded-full absolute left-1/2 translate-x-[-50%] bottom-0 translate-y-1/2 flex items-center justify-between bg-[#C73B0F]'>
-                            <div className='w-5 h-5 rounded-full border border-white flex items-center justify-center'>
-                                <img src="../../assets/images/icon-decrement-quantity.svg" alt="decrement" />
-                            </div>
-                            <input type="text" placeholder='0' className='w-5 text-[14px] bg-[#C73B0F] text-white font-semibold text-center' />
-                            <div className='w-5 h-5 rounded-full border border-white flex items-center justify-center' >
-                                <img src="../../assets/images/icon-increment-quantity.svg" alt="increment" />
-                            </div>
-                        </button> */}
+                        <AddItemButton />
+                        {/* <ActiveButton /> */}
                     </div>
                     <div className='flex flex-col'>
                         <p className='text-[14px] leading-[auto] tracking-[0px] font-normal text-[#87635A]'>

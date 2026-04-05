@@ -1,5 +1,6 @@
 import React from 'react'
 import CartListItems from './CartListItems'
+import CartList from './CartList'
 
 const LoadedCart = ({ setOpenModal }) => {
     return (
@@ -7,9 +8,7 @@ const LoadedCart = ({ setOpenModal }) => {
             <h2 className='text-[24px] text-[#C73B0F] font-bold leading-[auto] tracking-[0%]'>
                 Your Cart (7)
             </h2>
-            <ul className='flex flex-col gap-4'>
-                <CartListItems />
-            </ul>
+            <CartList />
             <div className="flex justify-between items-center">
                 <p className='text-[#260F08] text-[14px] leading-[auto] tracking-[0px] font-normal'>
                     Order Total

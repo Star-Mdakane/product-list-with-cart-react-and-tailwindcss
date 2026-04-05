@@ -7,11 +7,11 @@ const ProductList = () => {
         <section id="productlist__container" className='flex flex-col col-span-2 gap-8'>
             <h1 className='text-[#260F08] text-[40px] leading-[120%] tracking-[0%] font-bold'>Desserts</h1>
             <ul className='grid md:grid-cols-3 gap-6 md:gap-8'>
-                <li className='w-full flex flex-col gap-4'>
+                <li className='w-full flex flex-col gap-4 group'>
                     <div className='relative mb-5.5'>
-                        <img src="../../assets/images/image-waffle-mobile.jpg" className='h-53 lg:h-60 rounded-lg' alt="waffle" />
-                        <AddItemButton />
-                        {/* <ActiveButton /> */}
+                        <img src="../../assets/images/image-waffle-mobile.jpg" className='h-53 lg:h-60 rounded-lg group-[.isActive]:border-2 border-[#C73B0F]' alt="waffle" />
+                        {/* <AddItemButton /> */}
+                        <ActiveButton />
                     </div>
                     <div className='flex flex-col'>
                         <p className='text-[14px] leading-[auto] tracking-[0px] font-normal text-[#87635A]'>
@@ -28,9 +28,9 @@ const ProductList = () => {
                 <li className='w-full flex flex-col gap-4'>
                     <div className='relative mb-5.5'>
                         <img src="../../assets/images/image-creme-brulee-mobile.jpg" className='h-53 lg:h-60 rounded-lg' alt="waffle" />
-                        <button type="button" className='w-40 h-11 p-3 gap-2 bg-white border border-rose-400 rounded-full absolute left-1/2 translate-x-[-50%] bottom-0 translate-y-1/2 flex items-center justify-center'>
+                        <button type="button" className='w-40 h-11 p-3 gap-2 bg-white border border-[#AD8A85] group hover:border-[#C73B0F] rounded-full absolute left-1/2 translate-x-[-50%] bottom-0 translate-y-1/2 flex items-center justify-center'>
                             <img src="../../assets/images/icon-add-to-cart.svg" alt="cart" />
-                            <p className='text-[14px] text-[#260F08] font-semibold leading-[auto] tracking-[0%]'>
+                            <p className='text-[14px] text-[#260F08] font-semibold leading-[auto] tracking-[0%] group-hover:text-[#C73B0F]'>
                                 Add To Cart
                             </p>
                         </button>
@@ -59,7 +59,7 @@ const ProductList = () => {
                 <li className='w-full flex flex-col gap-4'>
                     <div className='relative mb-5.5'>
                         <img src="../../assets/images/image-macaron-mobile.jpg" className='h-53 lg:h-60 rounded-lg' alt="waffle" />
-                        <button type="button" className='w-40 h-11 p-3 gap-2 bg-white border border-rose-400 rounded-full absolute left-1/2 translate-x-[-50%] bottom-0 translate-y-1/2 flex items-center justify-center'>
+                        <button type="button" className='w-40 h-11 p-3 gap-2 bg-white border border-[#AD8A85] rounded-full absolute left-1/2 translate-x-[-50%] bottom-0 translate-y-1/2 flex items-center justify-center'>
                             <img src="../../assets/images/icon-add-to-cart.svg" alt="cart" />
                             <p className='text-[14px] text-[#260F08] font-semibold leading-[auto] tracking-[0%]'>
                                 Add To Cart

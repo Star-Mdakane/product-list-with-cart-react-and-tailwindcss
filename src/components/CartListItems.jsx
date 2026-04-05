@@ -14,40 +14,11 @@ const CartListItems = () => {
                         <p className='text-[14px] leading-[auto] tracking-[0px] font-regular text-[#87635A]'>$5.50</p>
                     </div>
                 </div>
-                <div className='w-5 h-5 rounded-full border border-[#AD8A85] flex items-center justify-center'>
-                    <img src="../../assets/images/icon-remove-item.svg" alt="remove" />
-                </div>
+                <button type='button' aria-label='Remove item' className='w-5 h-5 rounded-full border border-[#AD8A85] hover:border-[#260F08] flex items-center justify-center group cursor-pointer'>
+                    <svg className='group-hover:stroke-[#260F08]' xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 10 10"><path fill="#CAAFA7" d="M8.375 9.375 5 6 1.625 9.375l-1-1L4 5 .625 1.625l1-1L5 4 8.375.625l1 1L6 5l3.375 3.375-1 1Z" /></svg>
+                </button>
             </li>
-            <li className='flex items-center justify-between pb-4 border-b border-rose-100'>
-                <div className='flex flex-col gap-1'>
-                    <p className='text-[#260F08] text-[14px] leading-[auto] tracking-[0px] font-bold'>
-                        Classic Tiramisu
-                    </p>
-                    <div className='flex items-center gap-2'>
-                        <p className='text-[14px] leading-[auto] tracking-[0px] font-bold text-[#C73B0F]'>1x</p>
-                        <p className='text-[14px] leading-[auto] tracking-[0px] font-regular text-[#87635A]'>@ $5.50</p>
-                        <p className='text-[14px] leading-[auto] tracking-[0px] font-regular text-[#87635A]'>$5.50</p>
-                    </div>
-                </div>
-                <div className='w-5 h-5 rounded-full border border-[#AD8A85] flex items-center justify-center'>
-                    <img src="../../assets/images/icon-remove-item.svg" alt="remove" />
-                </div>
-            </li>
-            <li className='flex items-center justify-between pb-4 border-b border-rose-100'>
-                <div className='flex flex-col gap-1'>
-                    <p className='text-[#260F08] text-[14px] leading-[auto] tracking-[0px] font-bold'>
-                        Classic Tiramisu
-                    </p>
-                    <div className='flex items-center gap-2'>
-                        <p className='text-[14px] leading-[auto] tracking-[0px] font-bold text-[#C73B0F]'>1x</p>
-                        <p className='text-[14px] leading-[auto] tracking-[0px] font-regular text-[#87635A]'>@ $5.50</p>
-                        <p className='text-[14px] leading-[auto] tracking-[0px] font-regular text-[#87635A]'>$5.50</p>
-                    </div>
-                </div>
-                <div className='w-5 h-5 rounded-full border border-[#AD8A85] flex items-center justify-center'>
-                    <img src="../../assets/images/icon-remove-item.svg" alt="remove" />
-                </div>
-            </li>
+
         </>
     )
 }

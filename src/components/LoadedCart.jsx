@@ -1,7 +1,7 @@
 import React from 'react'
 import CartListItems from './CartListItems'
 
-const LoadedCart = () => {
+const LoadedCart = ({ setOpenModal }) => {
     return (
         <>
             <h2 className='text-[24px] text-[#C73B0F] font-bold leading-[auto] tracking-[0%]'>
@@ -24,7 +24,7 @@ const LoadedCart = () => {
                     This is a <span className='font-bold'>carbon-neutral</span> delivery
                 </p>
             </div>
-            <button id='active' type="button" className='w-full h-11 p-3 rounded-full  flex items-center justify-center bg-[#C73B0F] text-[16px] text-white leading-[auto] tracking-[0%] font-semibold'>
+            <button onClick={() => { setOpenModal(true) }} type="button" className='w-full h-11 p-3 rounded-full  flex items-center justify-center bg-[#C73B0F] hover:bg-[#952B0B] text-[16px] text-white leading-[auto] tracking-[0%] font-semibold cursor-pointer'>
                 Cornfirm Order
             </button>
         </>

@@ -1,5 +1,3 @@
-import React from 'react'
-
 const OrderTotal = () => {
     return (
         <div className="flex justify-between items-center">

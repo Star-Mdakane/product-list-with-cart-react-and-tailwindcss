@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import ActiveButton from './ActiveButton'
 import AddItemButton from './AddItemButton';
 
 const DessertItem = ({ dessert }) => {
 
     const [width, setWidth] = useState(window.innerWidth);
+    const [isSelected, setSelected] = useState(false);
 
     useEffect(() => {
         const handleResize = () => setWidth(window.innerWidth);
@@ -12,20 +13,22 @@ const DessertItem = ({ dessert }) => {
         return () => window.removeEventListener('resize', handleResize);
     }, [])
 
-    const { image, name, category, price } = dessert;
+    const handleAddItem = () => {
+        setSelected(true);
+    }
 
+    const { image, name, category, price } = dessert;
     const isMobile = width < 640;
     const isTablet = width < 1024;
 
-    console.log(image);
-
     return (
 
-        <li className='w-full flex flex-col gap-4 group'>
+        <li className={`w-full flex flex-col gap-4 group ${isSelected && 'isActive'}`}>
             <div className='relative mb-5.5'>
                 <img src={isMobile ? image.mobile : isTablet ? image.tablet : image.desktop} className='h-53 lg:h-60 rounded-lg group-[.isActive]:border-2 border-[#C73B0F]' alt="waffle" />
-                <AddItemButton />
-                {/* <ActiveButton /> */}
+                {isSelected ? <ActiveButton /> : <AddItemButton handleClick={handleAddItem} />}
+
+
             </div>
             <div className='flex flex-col'>
                 <p className='text-[14px] leading-[auto] tracking-[0px] font-normal text-[#87635A]'>

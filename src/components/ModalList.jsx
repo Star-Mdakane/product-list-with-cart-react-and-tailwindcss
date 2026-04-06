@@ -1,29 +1,18 @@
-import React, { useEffect, useState } from 'react'
+import { useContext } from 'react'
 import ModalListItems from './ModalListItems'
+import { GlobalContext } from '../contexts/GlobalContext';
 
 const ModalList = () => {
-    const [data, setData] = useState(null)
-
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const res = await fetch("/data.json");
-                const data = await res.json();
-                setData(data);
-                console.log(data);
-            } catch (error) {
-                console.log('Error fetching data', error)
-            }
-        }
-
-        fetchData();
-    }, [])
+    const { data } = useContext(GlobalContext)
 
     return (
+
         <ul className='flex flex-col gap-4'>
             {/* Make an array to add items */}
             <ModalListItems data={data} />
         </ul>
+
+
     )
 }
 

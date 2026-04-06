@@ -1,4 +1,3 @@
-import React from 'react'
 import OrderTotal from './OrderTotal'
 import ModalList from './ModalList'
 
@@ -27,7 +26,7 @@ const CartModal = ({ setOpenModal }) => {
                 </div>
                 <ModalList />
                 <OrderTotal />
-                <button onClick={handleClose} type="button" className='w-full h-11 p-3 rounded-full  flex items-center justify-center bg-[#C73B0F] text-[16px] text-white leading-[auto] tracking-[0%] font-semibold'>
+                <button onClick={handleClose} type="button" className='w-full h-11 p-3 rounded-full  flex items-center justify-center bg-[#C73B0F] text-[16px] text-white leading-[auto] tracking-[0%] font-semibold cursor-pointer'>
                     Start New Order
                 </button>
 

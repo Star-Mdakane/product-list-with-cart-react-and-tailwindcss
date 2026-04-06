@@ -1,27 +1,12 @@
-import React, { useEffect, useState } from 'react'
 import AddItemButton from './AddItemButton'
 import ActiveButton from './ActiveButton'
 import DessertItem from './DessertItem';
+import { useContext } from 'react';
+import { GlobalContext } from '../contexts/GlobalContext';
 
 const ProductList = () => {
-    const [data, setData] = useState([]);
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const res = await fetch("/data.json");
-                const data = await res.json();
-                setData(data);
-                console.log(data);
-            } catch (error) {
-                console.log('Error fetching data', error)
-            }
-        }
-
-        fetchData();
-    }, [])
-
-    console.log(data);
+    const { data } = useContext(GlobalContext)
 
     return (
         <section id="productlist__container" className='flex flex-col col-span-2 gap-8'>

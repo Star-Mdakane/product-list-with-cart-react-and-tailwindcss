@@ -4,7 +4,8 @@ const GlobalContext = createContext();
 
 const GlobalProvider = ({ children }) => {
 
-    const [data, setData] = useState([])
+    const [data, setData] = useState([]);
+    const [list, setList] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -20,8 +21,23 @@ const GlobalProvider = ({ children }) => {
         fetchData();
     }, [])
 
+    useEffect(() => {
+        console.log('list updated', list);
+    }, [list])
+
+    const addItemToList = (item) => {
+        setList((prev) => [...prev, item])
+    };
+
+    const removeItem = (id) => {
+        setList(prev => prev.filter((item) => item.id !== id));
+    }
+
     const value = {
-        data
+        data,
+        list,
+        addItemToList,
+        removeItem
     }
 
     return (

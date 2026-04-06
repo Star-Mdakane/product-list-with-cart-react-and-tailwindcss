@@ -1,11 +1,13 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import ActiveButton from './ActiveButton'
 import AddItemButton from './AddItemButton';
+import { GlobalContext } from '../contexts/GlobalContext';
 
 const DessertItem = ({ dessert }) => {
 
     const [width, setWidth] = useState(window.innerWidth);
     const [isSelected, setSelected] = useState(false);
+    const { addItemToList, removeItem } = useContext(GlobalContext);
 
     useEffect(() => {
         const handleResize = () => setWidth(window.innerWidth);
@@ -17,17 +19,19 @@ const DessertItem = ({ dessert }) => {
         setSelected(true);
     }
 
+
+
     const { image, name, category, price } = dessert;
     const isMobile = width < 640;
     const isTablet = width < 1024;
+    const imageSrc = isMobile ? image.mobile : isTablet ? image.tablet : image.desktop;
 
     return (
 
         <li className={`w-full flex flex-col gap-4 group ${isSelected && 'isActive'}`}>
             <div className='relative mb-5.5'>
-                <img src={isMobile ? image.mobile : isTablet ? image.tablet : image.desktop} className='h-53 lg:h-60 rounded-lg group-[.isActive]:border-2 border-[#C73B0F]' alt="waffle" />
-                {isSelected ? <ActiveButton /> : <AddItemButton handleClick={handleAddItem} />}
-
+                <img src={imageSrc} className='h-53 lg:h-60 rounded-lg group-[.isActive]:border-2 border-[#C73B0F]' alt="waffle" />
+                {isSelected ? <ActiveButton onAdd={() => addItemToList(dessert)} onDelete={() => removeItem(dessert.category)} /> : <AddItemButton handleClick={handleAddItem} />}
 
             </div>
             <div className='flex flex-col'>

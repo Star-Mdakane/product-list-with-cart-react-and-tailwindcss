@@ -7,7 +7,7 @@ const DessertItem = ({ dessert }) => {
 
     const [width, setWidth] = useState(window.innerWidth);
     const [isSelected, setSelected] = useState(false);
-    const { addItemToList, removeItem } = useContext(GlobalContext);
+    const { list, addItemToList, removeItem } = useContext(GlobalContext);
 
     useEffect(() => {
         const handleResize = () => setWidth(window.innerWidth);
@@ -15,11 +15,20 @@ const DessertItem = ({ dessert }) => {
         return () => window.removeEventListener('resize', handleResize);
     }, [])
 
+    useEffect(() => {
+        const isInList = list.some(item => item.name === dessert.name);
+        setSelected(isInList);
+    }, [list, dessert.name])
+
     const handleAddItem = () => {
         setSelected(true);
+        addItemToList(dessert);
     }
 
+    const handleDelete = () => {
+        removeItem(dessert)
 
+    }
 
     const { image, name, category, price } = dessert;
     const isMobile = width < 640;
@@ -31,7 +40,7 @@ const DessertItem = ({ dessert }) => {
         <li className={`w-full flex flex-col gap-4 group ${isSelected && 'isActive'}`}>
             <div className='relative mb-5.5'>
                 <img src={imageSrc} className='h-53 lg:h-60 rounded-lg group-[.isActive]:border-2 border-[#C73B0F]' alt="waffle" />
-                {isSelected ? <ActiveButton onAdd={() => addItemToList(dessert)} onDelete={() => removeItem({ ...dessert, id: dessert.id })} /> : <AddItemButton handleClick={handleAddItem} />}
+                {isSelected ? <ActiveButton onAdd={() => addItemToList(dessert)} onDelete={handleDelete} /> : <AddItemButton handleClick={handleAddItem} />}
 
             </div>
             <div className='flex flex-col'>

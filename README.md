@@ -56,6 +56,7 @@ Problems:
 - Not being used to react and see lint squiglyy lines and red on tab name you think there is an error and youwant to fix but it is just a warning.
 - Adding images I used fetch in efefect hook and worked properly on vs code but when I checked it on vercel there were no I mages. I used svg for path for svgs but for images i had to move the assets and json file/foldder to public folder for it to show. 
 - Removing item from a list is complicated. Used simple filter method which did not work. Went on to using name for id as prop but it delelted the entire list of items with that dessert name. Finally added an id to the element and used find and filter method combined on delete to select that particular item with that id and remove it.
+- Whenn I tried to edit delete item so that it changes the ui, I went on cycles for about 5 hours then revverted to old code and added 2 line.
 
 ### Built with
 

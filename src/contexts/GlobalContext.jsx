@@ -27,8 +27,8 @@ const GlobalProvider = ({ children }) => {
     }, [list])
 
     const addItemToList = (item) => {
-        const newItem = { ...item, id: nanoid() }
-        setList((prev) => [...prev, newItem])
+        const newItem = { ...item, id: nanoid() };
+        setList(prev => [...prev, newItem]);
     };
 
     const removeItem = (itemToRemove) => {
@@ -36,7 +36,7 @@ const GlobalProvider = ({ children }) => {
         if (itemInList) {
             setList(prev => prev.filter((item) => item.id !== itemInList.id));
         }
-    }
+    };
 
     const value = {
         data,

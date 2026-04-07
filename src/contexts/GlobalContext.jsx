@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState } from "react";
+import { nanoid } from "nanoid";
 
 const GlobalContext = createContext();
 
@@ -12,7 +13,7 @@ const GlobalProvider = ({ children }) => {
             try {
                 const res = await fetch("/data.json");
                 const data = await res.json();
-                setData(data);
+                setData(data.map(item => ({ ...item, id: nanoid() })));
             } catch (error) {
                 console.log('Error fetching data', error)
             }
@@ -26,11 +27,15 @@ const GlobalProvider = ({ children }) => {
     }, [list])
 
     const addItemToList = (item) => {
-        setList((prev) => [...prev, item])
+        const newItem = { ...item, id: nanoid() }
+        setList((prev) => [...prev, newItem])
     };
 
-    const removeItem = (id) => {
-        setList(prev => prev.filter((item) => item.id !== id));
+    const removeItem = (itemToRemove) => {
+        const itemInList = list.find(item => item.name === itemToRemove.name);
+        if (itemInList) {
+            setList(prev => prev.filter((item) => item.id !== itemInList.id));
+        }
     }
 
     const value = {

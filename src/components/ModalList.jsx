@@ -2,14 +2,17 @@ import { useContext } from 'react'
 import ModalListItems from './ModalListItems'
 import { GlobalContext } from '../contexts/GlobalContext';
 
+
 const ModalList = () => {
-    const { data } = useContext(GlobalContext)
+
+    const { list, setList } = useContext(GlobalContext);
+
+    const uniqueArray = [...new Map(list.map(item => [item.name, item])).values()];
 
     return (
 
         <ul className='flex flex-col gap-4'>
-            {/* Make an array to add items */}
-            <ModalListItems data={data} />
+            {uniqueArray?.map(item => <ModalListItems key={item.id} item={item} list={list} setList={setList} />)}
         </ul>
 
 

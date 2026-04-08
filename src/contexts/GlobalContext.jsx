@@ -22,9 +22,9 @@ const GlobalProvider = ({ children }) => {
         fetchData();
     }, [])
 
-    useEffect(() => {
-        console.log('list updated', list);
-    }, [list])
+    // useEffect(() => {
+    //     console.log('list updated', list);
+    // }, [list])
 
     const addItemToList = (item) => {
         const newItem = { ...item, id: nanoid() };
@@ -41,6 +41,7 @@ const GlobalProvider = ({ children }) => {
     const value = {
         data,
         list,
+        setList,
         addItemToList,
         removeItem
     }

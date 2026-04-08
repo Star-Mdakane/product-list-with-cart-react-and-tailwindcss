@@ -1,12 +1,21 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import CartListItems from './CartListItems'
 import CartList from './CartList'
+import { GlobalContext } from '../contexts/GlobalContext'
 
 const LoadedCart = ({ setOpenModal }) => {
+
+
+    const { list } = useContext(GlobalContext);
+    const price = list.map(item => item.price)
+    const total = price.reduce((acc, item) => (acc += item), 0).toFixed(2);
+
+
+
     return (
         <>
             <h2 className='text-[24px] text-[#C73B0F] font-bold leading-[auto] tracking-[0%]'>
-                Your Cart (7)
+                {`Your Cart (${list.length})`}
             </h2>
             <CartList />
             <div className="flex justify-between items-center">
@@ -14,7 +23,7 @@ const LoadedCart = ({ setOpenModal }) => {
                     Order Total
                 </p>
                 <p className='text-[24px] text-[#260F08] font-bold leading-[auto] tracking-[0%]'>
-                    $46.50
+                    ${total}
                 </p>
             </div>
             <div className="flex gap-2 py-4 px-4 bg-[#FCF8F6] rounded-lg justify-center">

@@ -1,10 +1,15 @@
 import OrderTotal from './OrderTotal'
 import ModalList from './ModalList'
+import { useContext } from 'react'
+import { GlobalContext } from '../contexts/GlobalContext'
 
 const CartModal = ({ setOpenModal }) => {
 
+    const { setList } = useContext(GlobalContext);
+
     const handleClose = () => {
-        setOpenModal(false)
+        setOpenModal(false);
+        setList([]);
     }
 
     return (

@@ -36,7 +36,7 @@ const GlobalProvider = ({ children }) => {
 
     const getUniqueValue = (value) => {
         if (!value) return 0;
-        const nameToKeep = value.name; // or value?.name
+        const nameToKeep = value.name;
         return list.filter(i => i.name === nameToKeep).length;
     };
 

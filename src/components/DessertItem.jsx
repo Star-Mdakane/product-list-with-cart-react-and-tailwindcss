@@ -7,23 +7,21 @@ const DessertItem = ({ dessert }) => {
 
     const [width, setWidth] = useState(window.innerWidth);
     const { list, addItemToList, removeItem } = useContext(GlobalContext);
-    const isInList = list.some(item => item.name === dessert.name);
-    const [isSelected, setSelected] = useState(isInList);
+    const isSelected = list.some(item => item.name === dessert.name);
+
 
     useEffect(() => {
         const handleResize = () => setWidth(window.innerWidth);
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
-    }, [])
+    }, []);
 
     const handleAddItem = () => {
-        setSelected(true);
         addItemToList(dessert);
     }
 
     const handleDelete = () => {
-        removeItem(dessert)
-
+        removeItem(dessert);
     }
 
     const { image, name, category, price } = dessert;
@@ -56,4 +54,4 @@ const DessertItem = ({ dessert }) => {
     )
 }
 
-export default DessertItem
+export default DessertItem;

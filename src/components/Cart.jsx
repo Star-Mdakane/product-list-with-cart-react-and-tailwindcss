@@ -16,4 +16,4 @@ const Cart = ({ setOpenModal }) => {
     )
 }
 
-export default Cart
+export default Cart;

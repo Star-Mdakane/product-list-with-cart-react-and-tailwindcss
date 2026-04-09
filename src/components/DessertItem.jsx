@@ -6,19 +6,15 @@ import { GlobalContext } from '../contexts/GlobalContext';
 const DessertItem = ({ dessert }) => {
 
     const [width, setWidth] = useState(window.innerWidth);
-    const [isSelected, setSelected] = useState(false);
     const { list, addItemToList, removeItem } = useContext(GlobalContext);
+    const isInList = list.some(item => item.name === dessert.name);
+    const [isSelected, setSelected] = useState(isInList);
 
     useEffect(() => {
         const handleResize = () => setWidth(window.innerWidth);
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, [])
-
-    useEffect(() => {
-        const isInList = list.some(item => item.name === dessert.name);
-        setSelected(isInList);
-    }, [list, dessert.name])
 
     const handleAddItem = () => {
         setSelected(true);
@@ -41,7 +37,7 @@ const DessertItem = ({ dessert }) => {
         <li className={`w-full flex flex-col gap-4 group ${isSelected && 'isActive'}`}>
             <div className='relative mb-5.5'>
                 <img src={imageSrc} className='h-53 lg:h-60 rounded-lg group-[.isActive]:border-2 border-[#C73B0F]' alt="waffle" />
-                {isSelected ? <ActiveButton onAdd={() => addItemToList(dessert)} onDelete={handleDelete} /> : <AddItemButton handleClick={handleAddItem} />}
+                {isSelected ? <ActiveButton onAdd={() => addItemToList(dessert)} onDelete={handleDelete} item={dessert} /> : <AddItemButton handleClick={handleAddItem} />}
 
             </div>
             <div className='flex flex-col'>

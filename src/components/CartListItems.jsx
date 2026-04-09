@@ -1,4 +1,9 @@
+import { useContext } from "react";
+import { GlobalContext } from "../contexts/GlobalContext";
+
 const CartListItems = ({ item, list, setList }) => {
+
+    const { getUniqueValue } = useContext(GlobalContext)
 
     const handleDeleteItem = (dessert) => {
         setList(list.filter(item => item.name !== dessert.name))
@@ -7,7 +12,9 @@ const CartListItems = ({ item, list, setList }) => {
     const nameToKeep = item.name
     const uniqueItem = list.filter(i => i.name === nameToKeep);
     const price = item.price.toFixed(2);
-    const total = uniqueItem.length * price
+    const total = uniqueItem.length * price;
+
+    getUniqueValue(uniqueItem);
 
     return (
         <>
@@ -29,6 +36,6 @@ const CartListItems = ({ item, list, setList }) => {
 
         </>
     )
-}
+};
 
-export default CartListItems
+export default CartListItems;

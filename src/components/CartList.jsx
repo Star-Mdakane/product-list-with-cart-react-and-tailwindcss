@@ -5,10 +5,7 @@ import CartListItems from './CartListItems';
 
 const CartList = () => {
 
-    const { list, setList } = useContext(GlobalContext);
-
-    const uniqueArray = [...new Map(list.map(item => [item.name, item])).values()];
-
+    const { list, setList, uniqueArray } = useContext(GlobalContext);
 
     return (
         <ul className='flex flex-col gap-4'>
@@ -17,4 +14,4 @@ const CartList = () => {
     )
 }
 
-export default CartList
+export default CartList;

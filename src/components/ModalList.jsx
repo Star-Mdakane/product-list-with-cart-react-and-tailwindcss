@@ -5,9 +5,7 @@ import { GlobalContext } from '../contexts/GlobalContext';
 
 const ModalList = () => {
 
-    const { list, setList } = useContext(GlobalContext);
-
-    const uniqueArray = [...new Map(list.map(item => [item.name, item])).values()];
+    const { list, setList, uniqueArray } = useContext(GlobalContext);
 
     return (
 

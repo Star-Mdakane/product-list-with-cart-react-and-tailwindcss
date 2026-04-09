@@ -22,10 +22,6 @@ const GlobalProvider = ({ children }) => {
         fetchData();
     }, [])
 
-    // useEffect(() => {
-    //     console.log('list updated', list);
-    // }, [list])
-
     const addItemToList = (item) => {
         const newItem = { ...item, id: nanoid() };
         setList(prev => [...prev, newItem]);
@@ -38,12 +34,23 @@ const GlobalProvider = ({ children }) => {
         }
     };
 
+    const getUniqueValue = (value) => {
+        if (!value) return 0;
+        const nameToKeep = value.name; // or value?.name
+        return list.filter(i => i.name === nameToKeep).length;
+    };
+
+
+    const uniqueArray = [...new Map(list.map(item => [item.name, item])).values()];
+
     const value = {
         data,
         list,
         setList,
         addItemToList,
-        removeItem
+        removeItem,
+        uniqueArray,
+        getUniqueValue
     }
 
     return (

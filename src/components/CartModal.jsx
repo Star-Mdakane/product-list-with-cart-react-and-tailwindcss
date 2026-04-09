@@ -13,7 +13,7 @@ const CartModal = ({ setOpenModal }) => {
     }
 
     return (
-        <div className='z-10 absolute w-screen min-h-screen bg-black/50 left-0 top-0 md:flex items-center justify-center'>
+        <div className='z-10 absolute w-screen min-h-screen bg-black/50 left-0 top-0 md:flex items-center justify-center overflow-hidden overflow-y-auto max-h-screen'>
             <div className='bg-white w-93.75 md:w-172 lg:w-148 mx-auto mt-23.75 md:mt-0 flex flex-col rounded-t-xl md:rounded-xl pt-10 px-6 pb-6 gap-8'>
                 <div className='flex flex-col gap-6 items-start'>
                     <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -51,6 +51,14 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ## My process
 
+1. Since tailwind is mobile first, it is the approach I took where I designed the static site using JSX and Tailwindcss.
+2. After designing the static site I started breaking the app into components and and looked at componets which had list and thought they are the ones which will need to fetch the data.
+3. Upon further inspection I saw that the way the data is distributed and the way it will be consumed I cannot just pass props but I needed context API.
+4. I rendered the dessert list and on that list I had to make the buttons components also since they had they own functions.
+5. The buttons of the list elements had to be 2 components so to be cconditionally rendered.
+6. For the Cart list and Modal list I had to create a seperate unique list whch I added an id to so that I could manage each individual list item.
+
+
 
 Problems:
 - Not being used to react and see lint squiglyy lines and red on tab name you think there is an error and youwant to fix but it is just a warning.

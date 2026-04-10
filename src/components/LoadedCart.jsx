@@ -5,12 +5,9 @@ import { GlobalContext } from '../contexts/GlobalContext'
 
 const LoadedCart = ({ setOpenModal }) => {
 
-
     const { list } = useContext(GlobalContext);
     const price = list.map(item => item.price)
     const total = price.reduce((acc, item) => (acc += item), 0).toFixed(2);
-
-
 
     return (
         <>

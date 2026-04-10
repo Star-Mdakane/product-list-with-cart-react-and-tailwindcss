@@ -11,8 +11,6 @@ const ActiveButton = ({ onAdd, onDelete, item }) => {
         setInputValue(count);
     }, [count]);
 
-    console.log(count);
-
     return (
         <div id='active' className='w-40 h-11 p-3 rounded-full absolute left-1/2 translate-x-[-50%] bottom-0 translate-y-1/2 flex items-center justify-between bg-[#C73B0F] cursor-pointer'>
             <button type='button' onClick={onDelete} aria-label='Decrease value' className='w-5 h-5 rounded-full border border-white flex items-center justify-center cursor-pointer hover:bg-white group'>

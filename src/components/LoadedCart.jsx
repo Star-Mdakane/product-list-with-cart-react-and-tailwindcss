@@ -30,7 +30,7 @@ const LoadedCart = ({ setOpenModal }) => {
                 </p>
             </div>
             <button onClick={() => { setOpenModal(true) }} type="button" className='w-full h-11 p-3 rounded-full  flex items-center justify-center bg-[#C73B0F] hover:bg-[#952B0B] text-[16px] text-white leading-[auto] tracking-[0%] font-semibold cursor-pointer'>
-                Cornfirm Order
+                Confirm Order
             </button>
         </>
     )

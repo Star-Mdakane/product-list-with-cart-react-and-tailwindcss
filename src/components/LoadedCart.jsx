@@ -1,5 +1,4 @@
 import React, { useContext } from 'react'
-import CartListItems from './CartListItems'
 import CartList from './CartList'
 import { GlobalContext } from '../contexts/GlobalContext'
 

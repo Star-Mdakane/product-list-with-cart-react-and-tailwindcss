@@ -35,7 +35,7 @@ const DessertItem = ({ dessert }) => {
         <li className={`w-full flex flex-col gap-4 group ${isSelected && 'isActive'}`}>
             <div className='relative mb-5.5'>
                 <img src={imageSrc} className='h-53 lg:h-60 rounded-lg group-[.isActive]:border-2 border-[#C73B0F]' alt={item.category} />
-                {isSelected ? <ActiveButton onAdd={() => addItemToList(dessert)} onDelete={handleDelete} item={dessert} /> : <AddItemButton handleClick={handleAddItem} item={item} />}
+                {isSelected ? <ActiveButton onAdd={() => addItemToList(dessert)} onDelete={handleDelete} item={dessert} /> : <AddItemButton handleClick={handleAddItem} item={dessert} />}
 
             </div>
             <div className='flex flex-col'>

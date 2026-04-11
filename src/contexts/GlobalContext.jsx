@@ -8,6 +8,8 @@ const GlobalProvider = ({ children }) => {
     const [data, setData] = useState([]);
     const [list, setList] = useState([]);
 
+    let data = { cached: true };
+
     useEffect(() => {
         const fetchData = async () => {
             try {

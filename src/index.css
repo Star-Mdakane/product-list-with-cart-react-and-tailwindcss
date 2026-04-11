@@ -1,11 +1,12 @@
 @import "tailwindcss";
 
-@theme {
+:root {
   --font-rhat: "Red Hat Text", sans-serif;
   --default-font-family: var(--font-rhat);
 }
 
 body {
+  font-family: var(--default-font-family);
   position: relative;
   background-color: #fff1f2;
   width: 100vw;
